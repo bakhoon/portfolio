@@ -1,0 +1,189 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.App {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 20% 40% 40%;
+    height: 100vh; /* viewport height - 화면 높이의 100%를 차지 */
+    width: 100vw; /* viewport width - 화면 너비의 100%를 차지 */
+    overflow: hidden; /* 스크롤바 제거 */
+}
+
+.logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    .logo-image {
+        width: 100px;
+        height: 40px;
+    }
+}
+
+.name {
+    grid-column: 2 / 8;
+    grid-row: 1 / 2;
+    font-size: 4em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    
+    .name-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .last-name {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .flags {
+        position: absolute;
+        display: flex;
+        right: -20px;
+        bottom: -10px;
+        
+        .flag-icon {
+            width: 25px;
+            height: 20px;
+            margin-left: 5px;
+        }
+    }
+}
+
+.github {
+    grid-column: 8 / 9;
+    grid-row: 1 / 2;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid black;
+    .github-image {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin: auto;
+    }
+}
+
+.linkedin {
+    grid-column: 9 / 10;
+    grid-row: 1 / 2;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    .linkedin-image {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin: auto;
+    }
+}
+
+.email {
+    grid-column: 10 / 11;
+    grid-row: 1 / 2;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    .email-image {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin: auto;
+    }
+}
+
+.about {
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.WorkExperience {
+    grid-column: 6 / 11;
+    grid-row: 2 / 3;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.picture {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.skills {
+    grid-column: 3 / 7;
+    grid-row: 3 / 4;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.projects {
+    grid-column: 7 / 11;
+    grid-row: 3 / 4;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+}
