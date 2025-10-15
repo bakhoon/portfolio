@@ -1,3 +1,10 @@
+// 변수 선언
+$border-default: 1.5px solid black;
+$flex-center: flex;
+$justify-center: center;
+$align-center: center;
+$text-center: center;
+
 body, html {
     margin: 0;
     padding: 0;
@@ -26,11 +33,11 @@ body, html {
     grid-row: 1 / 2;
     font-size: 2em;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
+    border: $border-default;
     .logo-image {
         width: 100px;
         height: 40px;
@@ -42,11 +49,11 @@ body, html {
     grid-row: 1 / 2;
     font-size: 4em;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
+    border: $border-default;
     
     .name-text {
         display: flex;
@@ -78,12 +85,12 @@ body, html {
     grid-row: 1 / 2;
     font-size: 2em;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
     padding: 5px;
-    border: 1px solid black;
+    border: $border-default;
     .github-image {
         width: 40px;
         height: 40px;
@@ -97,11 +104,11 @@ body, html {
     grid-row: 1 / 2;
     font-size: 2em;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
+    border: $border-default;
     .linkedin-image {
         width: 40px;
         height: 40px;
@@ -115,11 +122,11 @@ body, html {
     grid-row: 1 / 2;
     font-size: 2em;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
+    border: $border-default;
     .email-image {
         width: 40px;
         height: 40px;
@@ -131,25 +138,81 @@ body, html {
 .about {
     grid-column: 1 / 6;
     grid-row: 2 / 3;
-    font-size: 2em;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: grid;
+    grid-template-rows: auto 1fr; /* auto는 내용에 맞게 크기 조정, 1fr은 남은 공간을 차지 */
+    border: $border-default;
+    padding-top: 10px; /* 전체 컨테이너 상단 여백 추가 */
+    .about__me__title {
+        grid-row: 1 / 2;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: left;
+        padding: 10px 20px; /* 상단 패딩 감소 */
+        margin: 0; /* 마진 제거하여 더 위로 이동 */
+    }
+    .about__me__footer {
+        font-size: 1em;
+        padding: 10px 20px; /* 상단 패딩 감소 */
+        text-align: left;
+        line-height: 1.5;
+        grid-row: 2 / 3;
+        overflow: hidden; /* 넘치는 텍스트 숨김 */
+        text-overflow: ellipsis; /* 말줄임표 표시 */
+        display: -webkit-box;
+        -webkit-line-clamp: 8; /* 최대 8줄까지 표시 */
+        -webkit-box-orient: vertical;
+        line-clamp: 8; /* 표준 속성 */
+    }
 }
 
 .WorkExperience {
     grid-column: 6 / 11;
     grid-row: 2 / 3;
-    font-size: 2em;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: grid;
+    grid-template-rows: auto 1fr; /* about 섹션과 일치시켜 일관성 유지 */
+    border: $border-default;
+    padding-top: 10px; /* 전체 컨테이너 상단 여백 추가 */
+    .work__experience__title {
+        grid-row: 1 / 2;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: left;
+        padding: 10px 20px; /* 상단 패딩 감소 */
+        margin: 0; /* 마진 제거 */
+    }
+    .work__experience__footer {
+        grid-row: 2 / 3;
+        font-size: 0.8em;
+        padding: 0px 20px; /* 상단 패딩 감소 */
+        text-align: left;
+        line-height: 1.5;
+        overflow: hidden; /* 넘치는 텍스트 숨김 */
+        .work__experience__company {
+            font-weight: bold;  
+            font-size: 1em;
+        }
+        .work__experience__details {
+            padding: 0px 10px;
+            overflow: hidden; /* 넘치는 텍스트 숨김 */
+        }
+        
+        .work-list {
+            margin-top: 0px; /* 상단 여백 제거 */
+            padding-left: 0px;
+        }
+        
+        .list-item {
+            margin: 2px 0px; /* 항목 간의 간격 제거 */
+            white-space: normal; /* 줄바꿈 허용 */
+            overflow: hidden;
+            text-overflow: ellipsis; /* 말줄임표 표시 */
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* 최대 2줄까지 표시 */
+            -webkit-box-orient: vertical;
+            line-clamp: 2; /* 표준 속성 */
+            line-height: 1.3; /* 줄 간격 좀 더 줄임 */
+        }
+    }
 }
 
 .picture {
@@ -157,33 +220,47 @@ body, html {
     grid-row: 3 / 4;
     font-size: 2em;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
+    border: $border-default;
 }
 
 .skills {
-    grid-column: 3 / 7;
+    grid-column: 3 / 5;
     grid-row: 3 / 4;
     font-size: 2em;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
+    border: $border-default;
 }
 
 .projects {
-    grid-column: 7 / 11;
+    grid-column: 5 / 9;
     grid-row: 3 / 4;
     font-size: 2em;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid black;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
+    border: $border-default;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    grid-column: 9 / 11;
+    grid-row: 3 / 4;
+    font-size: 1em;
+    font-weight: bold;
+    display: $flex-center;
+    justify-content: $justify-center;
+    align-items: $align-center;
+    text-align: $text-center;
+    border: $border-default;
 }
